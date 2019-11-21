@@ -1,3 +1,6 @@
+import java.awt.*;
+import java.util.ArrayList;
+
 public class Agenda  {
     ABP<Contato> t = new ABP();
     IteradorEmOrdem<Contato> it = new IteradorEmOrdem<>(t.root);
@@ -28,8 +31,8 @@ public class Agenda  {
     }
 
 
-    public void insert(Contato c){
-        t.insere(c);
+    public void insert(String s, int i){
+        t.insere(new Contato(s, i));
     }
 
     public void remove(String s){
@@ -38,6 +41,30 @@ public class Agenda  {
                 t.remove(it.next().element);
             }
         }
+    }
+
+    public void listarAlfabeticamente(){
+        it = new IteradorEmOrdem<>(t.root);
+        ArrayList<String> list = new ArrayList<>();
+        while (it.hasNext()){
+            list.add(it.next().element.nome);
+        }
+        list.sort(String::compareToIgnoreCase);
+        for (String s :list) {
+            System.out.print(s + " ");
+        }
+    }
+
+    public static void main(String[] args){
+        Agenda a = new Agenda();
+        a.insert("Bob",9632123);
+        a.insert("Joao",9632125);
+        a.insert("Maria",696345345);
+        a.insert("André", 923141123);
+
+        a.listarAlfabeticamente();
+        System.out.println("");
+        a.t.printEmOrdem();
     }
 
     

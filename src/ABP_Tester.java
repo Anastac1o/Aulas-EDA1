@@ -22,5 +22,9 @@ public class ABP_Tester {
         while (it.hasNext()){
             System.out.println(it.next().element.toString());
         }
+
+        while (it.hasNext()){
+            System.out.println(it.next().element.toString());
+        }
     }
 }
