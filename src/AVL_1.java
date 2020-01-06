@@ -1,49 +1,38 @@
-import javax.swing.text.html.HTMLDocument;
-import java.util.Iterator;
-import java.util.NoSuchElementException;
+public class AVL_1<E extends Comparable<? super E>> {
+    NodeAVL root;
 
-public class ABP<E extends Comparable<? super E>> implements ABP_i<E> {
-    NoABP<E> root;
-
-    public static class NoABP<E> {
+    static class NodeAVL<E> {
+        int height;
         E element;
-        NoABP<E> esq;
-        NoABP<E> dir;
-        int height = 1;
+        NodeAVL<E> esq;
+        NodeAVL<E> dir;
 
-
-        NoABP(E o) {
-            this.element = o;
-            this.esq = null;
-            this.dir = null;
+        NodeAVL(E x){
+            element = x;
+            esq = null;
+            dir = null;
+            height = 1;
         }
 
-        NoABP(E e, NoABP<E> esq, NoABP<E> dir) {
-            this.element = e;
+        NodeAVL(E x, NodeAVL<E> esq, NodeAVL<E> dir){
+            element = x;
             this.esq = esq;
             this.dir = dir;
+            height = 1;
         }
     }
 
-    public ABP(){
-        this.root = null;
-    }
+    public AVL_1(){ root = null; }
 
-    public ABP(E x){
-        this.root = new NoABP<E>(x);
-    }
+    public AVL_1(E x) { root = new NodeAVL<E>(x); }
 
-    public ABP(NoABP<E> x){
-        this.root = x;
-    }
+    public AVL_1(NodeAVL<E> n){ root = n; }
 
-    public boolean isEmpty() {
-        return root == null;
-    }
+    public boolean isEmpty(){ return root == null; }
 
     public boolean contains(E x) { return contains(x, root); }
 
-    public boolean contains(E x, NoABP<E> n) {
+    public boolean contains(E x, NodeAVL<E> n) {
         if(n == null){
             return false;
         }
@@ -64,50 +53,67 @@ public class ABP<E extends Comparable<? super E>> implements ABP_i<E> {
         if (isEmpty()) {
             return null;
         } else{
-               return findMin(root);
+            return (E) findMin(root);
         }
     }
 
-    public E findMin(NoABP<E> n) {
+    public E findMin(NodeAVL<E> n) {
         if (n.esq == null) {
             return n.element;
         } else{
             return findMin(n.esq);
-            }
+        }
     }
     public E findMax() {
         if (isEmpty()) {
             return null;
         }else{
-            return findMax(root);
+            return (E) findMax(root);
         }
     }
 
-    public E findMax(NoABP<E> n){
+    public E findMax(NodeAVL<E> n){
         if(n.dir == null){
             return n.element;
         }else{
             return findMax(n.dir);
-            }
         }
+    }
 
     public void insere(E x) {
         root = insere(x , root);
     }
 
-    public NoABP<E> insere(E x, NoABP<E> n){
+    public NodeAVL<E> insere(E x, NodeAVL<E> n){
         if(n == null){
-            n = new NoABP<E>(x, null, null);
+            n = new NodeAVL<>(x, null, null);
         }else{
             if((n.element).compareTo(x) > 0){
                 n.esq = insere(x, n.esq);
             }else{
                 if((n.element).compareTo(x) < 0){
-                n.dir = insere(x, n.dir);
+                    n.dir = insere(x, n.dir);
                 }
             }
+        } //inserçao ABP
+
+        n.height = 1 + Math.max(height(n.esq),height(n.dir));    //actualiza altura do node
+        int i = equlibrio(n);                                                    //determina se há desequilibrio e qual o caso
+
+        if(i > 1 && x.compareTo(n.esq.element) == -1){                           //left left & key < node.left.key
+            return rotacaoDir(n);
         }
-        //System.out.println("inserted:" + n.element.toString());
+        if(i < -1 && x.compareTo(n.dir.element) == 1){                           //right right & key > node.right.key
+            return rotacaoEsq(n);
+        }
+        if(i > 1 && x.compareTo(n.esq.element) == 1){                            //left right & key > node.left.key
+            return duplaEsqDir(n);
+        }
+        if(i > 1 && x.compareTo(n.dir.element) == -1){                           //right left & key < node.right.key
+            return duplaDirEsq(n);
+        }
+
+        //se nao for nenhum dos casos
         return n;
     }
 
@@ -115,7 +121,7 @@ public class ABP<E extends Comparable<? super E>> implements ABP_i<E> {
         root = remove(x, root);
     }
 
-    public void printEmOrdem(NoABP n){
+    public void printEmOrdem(NodeAVL n){
         if(n == null) {return;}
 
         printEmOrdem(n.esq);
@@ -126,7 +132,7 @@ public class ABP<E extends Comparable<? super E>> implements ABP_i<E> {
     public void printEmOrdem() {
         printEmOrdem(root);
     }
-    public void printPosOrdem(NoABP n){
+    public void printPosOrdem(NodeAVL n){
         if (n == null) {return;}
 
         printPosOrdem(n.esq);
@@ -137,7 +143,7 @@ public class ABP<E extends Comparable<? super E>> implements ABP_i<E> {
         printPosOrdem(root);
     }
 
-    public void printPreOrdem(NoABP n){
+    public void printPreOrdem(NodeAVL n){
         if(n == null) {return;}
 
         System.out.print(n.element.toString()+" ");
@@ -149,7 +155,7 @@ public class ABP<E extends Comparable<? super E>> implements ABP_i<E> {
         printPreOrdem(root);
     }
 
-    private NoABP<E> remove(E x, NoABP<E> n) {
+    private NodeAVL<E> remove(E x, NodeAVL<E> n) {
         if (n == null) {
             return n;
         }
@@ -167,7 +173,7 @@ public class ABP<E extends Comparable<? super E>> implements ABP_i<E> {
         return n;
     }
 
-    public NoABP<E> find(E x, NoABP<E> n){
+    public NodeAVL<E> find(E x, NodeAVL<E> n){
         if (n == null) { return null; }
         if(n.element == x){
             return n;
@@ -183,19 +189,19 @@ public class ABP<E extends Comparable<? super E>> implements ABP_i<E> {
     }
 
     public E find(E x){
-        NoABP n = find(x, root);
+        NodeAVL n = find(x, root);
         return (E) n.element;
     }
 
-    private int height(NoABP n) {
-        if (n == null) return 0;
+    public int height(NodeAVL n){
+        if(n == null) return 0;
         return n.height;
     }
 
-    private NoABP<E> rotacaoDir(NoABP<E> n0) {
+    private NodeAVL<E> rotacaoDir(NodeAVL<E> n0) {
         System.out.println("Rotacao dir");
 
-        NoABP<E> n1 = (NoABP<E>) n0.esq;
+        NodeAVL<E> n1 = n0.esq;
         n0.esq = n1.dir;
         n1.dir = n0;
 
@@ -205,10 +211,10 @@ public class ABP<E extends Comparable<? super E>> implements ABP_i<E> {
         return n1;
     }
 
-    private NoABP<E> rotacaoEsq(NoABP<E> n0) {
+    private NodeAVL<E> rotacaoEsq(NodeAVL<E> n0) {
         System.out.println("Rotaçao esq");
 
-        NoABP<E> n1 = (NoABP<E>) n0.esq;
+        NodeAVL<E> n1 = n0.esq;
         n0.dir = n1.esq;
         n1.esq = n0;
 
@@ -217,59 +223,36 @@ public class ABP<E extends Comparable<? super E>> implements ABP_i<E> {
 
         return n1;
     }
-    private NoABP<E> duplaEsqDir(NoABP<E> n0){
+    private NodeAVL<E> duplaEsqDir(NodeAVL<E> n0){
         System.out.println("Rotacao dupla esq dir");
         //draw("Rotacao dupla esq dir : " + n0);
-        NoABP<E> n1 = (NoABP<E>) n0.esq;
+        NodeAVL<E> n1 = n0.esq;
         n0.esq = rotacaoEsq(n1);
         return rotacaoDir(n0);
     }
-    private NoABP<E> duplaDirEsq(NoABP<E> n0) {
+    private NodeAVL<E> duplaDirEsq(NodeAVL<E> n0){
         System.out.println("Rotacao dupla dir esq");
         //draw("Rotacao dupla dir esq : + n0);
-        NoABP<E> n1 = (NoABP<E>) n0.dir;
+        NodeAVL<E> n1 = n0.dir;
         n0.dir = rotacaoDir(n1);
         return rotacaoEsq(n0);
     }
 
-    private int equlibrio(NoABP<E> n){
+    private int equlibrio(NodeAVL<E> n){
         if(n == null) return 0;
         return height(n.esq) - height(n.dir);
     }
 
-    public NoABP<E> insereAVL(E x, NoABP<E> n){
-        //Insercao normal abp
-        if(n == null){
-            n = new NoABP<E>(x, null, null);
-        }else{
-            if((n.element).compareTo(x) > 0){
-                n.esq = insere(x, n.esq);
-            }else{
-                if((n.element).compareTo(x) < 0){
-                    n.dir = insere(x, n.dir);
-                }
-            }
-        }
-        //incrementar altura
-        n.height = 1 + Math.max(height(n.esq),height(n.dir));
-        
-
-
-
-    }
-
     public static void main(String[] args){
-        ABP t = new ABP();
-        t.insere(1);
-        t.insere(3);
-        t.insere(2);
-        t.insere(4);
-        t.insere(6);
-        if(!t.isEmpty()){
-        System.out.println(t.find(3));
-        System.out.println(t.contains(4));
-        System.out.println(t.findMax());
-        System.out.println(t.findMin());
-        }
+        AVL_1<Integer> a = new AVL_1<>();
+        a.insere(1);
+        a.insere(2);
+        a.insere(3);
+        a.insere(4);
+        a.insere(5);
+        a.insere(6);
+        a.insere(7);
+
+        a.printEmOrdem();
     }
 }
