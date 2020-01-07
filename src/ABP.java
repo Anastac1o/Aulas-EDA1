@@ -253,7 +253,7 @@ public class ABP<E extends Comparable<? super E>> implements ABP_i<E> {
         //incrementar altura
         n.height = 1 + Math.max(height(n.esq),height(n.dir));
         
-
+        return n;
 
 
     }
