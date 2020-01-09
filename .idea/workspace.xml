@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="584e5236-b432-45ad-a7d1-63d45a8b5b39" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/LinHashTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/QuadHashTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TrabalhoFinal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/InvalidStringException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AulasEDA1/ABP.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AulasEDA1/ABP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AulasEDA1/META-INF/AulasEDA1.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ABP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ABP.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HashTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TrabalhoFinal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TrabalhoFinal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,8 +67,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Agenda" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Agenda" />
+    <configuration name="TrabalhoFinal$Position" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TrabalhoFinal$Position" />
       <module name="AulasEDA1" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -88,10 +84,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.TrabalhoFinal" />
+        <item itemvalue="Application.TrabalhoFinal$Position" />
         <item itemvalue="Application.ABP" />
         <item itemvalue="Application.AVL" />
         <item itemvalue="Application.AVL_1" />
-        <item itemvalue="Application.Agenda" />
       </list>
     </recent_temporary>
   </component>
@@ -132,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578352978368</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Update on agenda class">
+      <created>1578362336976</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1578362336976</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -153,29 +156,33 @@
     <option name="LAST_COMMIT_MESSAGE" value="Update on agenda class" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="607" y="123" width="695" height="805" key="CommitChangelistDialog2" timestamp="1578352978008">
+    <state x="725" y="229" width="460" height="592" key="#com.intellij.ide.util.MemberChooser" timestamp="1578529684975">
       <screen x="0" y="0" width="1920" height="1051" />
     </state>
-    <state x="607" y="123" width="695" height="805" key="CommitChangelistDialog2/0.0.1920.1051@0.0.1920.1051" timestamp="1578352978008" />
-    <state width="1556" height="127" key="GridCell.Tab.0.bottom" timestamp="1578359712205">
+    <state x="725" y="229" width="460" height="592" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1051@0.0.1920.1051" timestamp="1578529684975" />
+    <state x="607" y="123" width="695" height="805" key="CommitChangelistDialog2" timestamp="1578362336850">
       <screen x="0" y="0" width="1920" height="1051" />
     </state>
-    <state width="1556" height="127" key="GridCell.Tab.0.bottom/0.0.1920.1051@0.0.1920.1051" timestamp="1578359712205" />
-    <state width="1556" height="127" key="GridCell.Tab.0.center" timestamp="1578359712205">
+    <state x="607" y="123" width="695" height="805" key="CommitChangelistDialog2/0.0.1920.1051@0.0.1920.1051" timestamp="1578362336850" />
+    <state width="1874" height="178" key="GridCell.Tab.0.bottom" timestamp="1578536205775">
       <screen x="0" y="0" width="1920" height="1051" />
     </state>
-    <state width="1556" height="127" key="GridCell.Tab.0.center/0.0.1920.1051@0.0.1920.1051" timestamp="1578359712205" />
-    <state width="1556" height="127" key="GridCell.Tab.0.left" timestamp="1578359712204">
+    <state width="1874" height="178" key="GridCell.Tab.0.bottom/0.0.1920.1051@0.0.1920.1051" timestamp="1578536205775" />
+    <state width="1874" height="178" key="GridCell.Tab.0.center" timestamp="1578536205774">
       <screen x="0" y="0" width="1920" height="1051" />
     </state>
-    <state width="1556" height="127" key="GridCell.Tab.0.left/0.0.1920.1051@0.0.1920.1051" timestamp="1578359712204" />
-    <state width="1556" height="127" key="GridCell.Tab.0.right" timestamp="1578359712205">
+    <state width="1874" height="178" key="GridCell.Tab.0.center/0.0.1920.1051@0.0.1920.1051" timestamp="1578536205774" />
+    <state width="1874" height="178" key="GridCell.Tab.0.left" timestamp="1578536205773">
       <screen x="0" y="0" width="1920" height="1051" />
     </state>
-    <state width="1556" height="127" key="GridCell.Tab.0.right/0.0.1920.1051@0.0.1920.1051" timestamp="1578359712205" />
-    <state x="653" y="352" key="com.intellij.ide.util.TipDialog" timestamp="1578338091654">
+    <state width="1874" height="178" key="GridCell.Tab.0.left/0.0.1920.1051@0.0.1920.1051" timestamp="1578536205773" />
+    <state width="1874" height="178" key="GridCell.Tab.0.right" timestamp="1578536205775">
       <screen x="0" y="0" width="1920" height="1051" />
     </state>
-    <state x="653" y="352" key="com.intellij.ide.util.TipDialog/0.0.1920.1051@0.0.1920.1051" timestamp="1578338091654" />
+    <state width="1874" height="178" key="GridCell.Tab.0.right/0.0.1920.1051@0.0.1920.1051" timestamp="1578536205775" />
+    <state x="653" y="352" key="com.intellij.ide.util.TipDialog" timestamp="1578523843581">
+      <screen x="0" y="0" width="1920" height="1051" />
+    </state>
+    <state x="653" y="352" key="com.intellij.ide.util.TipDialog/0.0.1920.1051@0.0.1920.1051" timestamp="1578523843581" />
   </component>
 </project>

@@ -146,10 +146,10 @@ public abstract class HashTable<T> {
                 if (table[i].del == true) {
                     System.out.println("[" + table[i] + "] - deleted");
                 } else {
-                    System.out.println("[" + table[i] + "]");
+                    System.out.println(i + " : " + "[" + table[i] + "]");
                 }
             } else {
-                System.out.println("[ ]");
+                System.out.println(i+ " : " + "[ ]");
             }
         }
     }

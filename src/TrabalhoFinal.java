@@ -1,35 +1,79 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.net.URL;
+import java.util.Objects;
 import java.util.Random;
+import java.util.Scanner;
 
 public class TrabalhoFinal {
+    LinHashTable<String> table = new LinHashTable();
 
-    static class Boggle {
-        Character[][] boggle = new Character[4][4];
+    static class Position {
+        Character ch;
+        int lin, col;
 
-        void genBoggle(){
-            Random r = new Random();
-            for (int i = 0; i < boggle.length; i++) {
-                for (int j = 0; j < boggle.length; j++){
-                    char c = (char) (r.nextInt(26) + 'a');
-                    boggle[i][j] = c;
-                }
-            }
+        Position(int lin, int col,Character c){
+            this.lin = lin;
+            this.col = col;
+            this.ch = c;
         }
 
-        void printBoggle(){
-            for (int i = 0; i < boggle.length; i++) {
-                for (int j = 0; j < boggle[i].length; j++) {
-                    System.out.print(boggle[i][j] + " ");
-                }
-                System.out.println();
-            }
+        public String toString() {
+            return ch.toString() + ":(" + lin + "," + col +")";
+        }
+
+        public boolean equals(Position p) {
+            return this.ch == p.ch;
         }
     }
 
-    class Position{}
+    private static Position[][] genBoggle(String s) throws InvalidStringException {
+       int length = s.length();
+       int count = 0;
+       int size;
+       if(length % 4 == 0){
+           size = length / 4;
+       }else throw new InvalidStringException("Numero de letras invalido.");
+       Position[][] boggle = new Position[size][size];
+       for(int i = 0; i < size; i++){
+           for(int j = 0; j < size; j++){
+               count++;
+               boggle[i][j] = new Position(i,j,s.charAt(count - 1));
+           }
+       }
+       return boggle;
+    }
 
-    public static void main(String[] args){
-        Boggle boggle = new Boggle();
-        boggle.genBoggle();
-        boggle.printBoggle();
+    private static void printBoggle(Position[][] boggle){
+       for (int i = 0; i < boggle.length; i++) {
+           for (int j = 0; j < boggle[i].length; j++) {
+               System.out.print(boggle[i][j].ch + " ");
+           }
+           System.out.println();
+       }
+    }
+
+    static LinHashTable<String> readWords() throws FileNotFoundException {
+
+        LinHashTable<String> table = new LinHashTable();
+        URL url = TrabalhoFinal.class.getResource("allWords.txt");
+        File file = new File(url.getPath());
+        Scanner sc = new Scanner(file);
+
+        while (sc.hasNextLine()){
+            table.insere(sc.nextLine());
+        }
+        return table;
+    }
+
+
+    public static void main(String[] args) throws InvalidStringException, FileNotFoundException {
+       Position[][] boggle = genBoggle("seldomometinkyas".toUpperCase());
+       printBoggle(boggle);
+       //readWords();
+        LinHashTable<String> map = readWords();
+        //map.print();
+        //map.debugPrint();
     }
 }
+
