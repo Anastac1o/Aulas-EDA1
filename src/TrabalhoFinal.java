@@ -1,38 +1,16 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.URL;
-import java.util.Objects;
-import java.util.Random;
 import java.util.Scanner;
 
 public class TrabalhoFinal {
-    LinHashTable<String> table = new LinHashTable();
-
-    static class Position {
-        Character ch;
-        int lin, col;
-
-        Position(int lin, int col,Character c){
-            this.lin = lin;
-            this.col = col;
-            this.ch = c;
-        }
-
-        public String toString() {
-            return ch.toString() + ":(" + lin + "," + col +")";
-        }
-
-        public boolean equals(Position p) {
-            return this.ch == p.ch;
-        }
-    }
 
     private static Position[][] genBoggle(String s) throws InvalidStringException {
-       int length = s.length();
-       int count = 0;
-       int size;
-       if(length % 4 == 0){
-           size = length / 4;
+       int length = s.length(); // comprimento da string
+       int count = 0;          // posiçao
+       int size;               // dimensao da matriz
+       if(length % (Math.sqrt(length)) == 0){    // esta funcao so permite
+           size = (int) (length / (Math.sqrt(length)));
        }else throw new InvalidStringException("Numero de letras invalido.");
        Position[][] boggle = new Position[size][size];
        for(int i = 0; i < size; i++){
@@ -43,6 +21,7 @@ public class TrabalhoFinal {
        }
        return boggle;
     }
+
 
     private static void printBoggle(Position[][] boggle){
        for (int i = 0; i < boggle.length; i++) {
@@ -65,6 +44,9 @@ public class TrabalhoFinal {
         }
         return table;
     }
+
+
+
 
 
     public static void main(String[] args) throws InvalidStringException, FileNotFoundException {
