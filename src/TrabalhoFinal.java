@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.URL;
 import java.util.Scanner;
 
@@ -20,6 +21,18 @@ public class TrabalhoFinal {
            }
        }
        return boggle;
+    }
+
+    static String readBoggle() throws IOException {
+        LinHashTable<String> table = new LinHashTable();
+        URL url = TrabalhoFinal.class.getResource("boggle1.txt");
+        File file = new File(url.getPath());
+        Scanner sc = new Scanner(file);
+
+        String content;
+        content = sc.next();
+
+        return content;
     }
 
 
