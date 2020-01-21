@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="584e5236-b432-45ad-a7d1-63d45a8b5b39" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Position.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AulasEDA1/TrabalhoFinal$Position.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AulasEDA1/HashTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AulasEDA1/HashTable.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AulasEDA1/TrabalhoFinal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AulasEDA1/TrabalhoFinal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HashTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Position.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TrabalhoFinal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TrabalhoFinal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,6 +27,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
@@ -136,7 +138,42 @@
       <option name="project" value="LOCAL" />
       <updated>1578362336976</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update">
+      <created>1578700774350</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1578700774350</updated>
+    </task>
+    <task id="LOCAL-00005" summary="update">
+      <created>1578700785844</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1578700785844</updated>
+    </task>
+    <task id="LOCAL-00006" summary="update">
+      <created>1578700919828</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1578700919828</updated>
+    </task>
+    <task id="LOCAL-00007" summary="update">
+      <created>1578700942569</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1578700942569</updated>
+    </task>
+    <task id="LOCAL-00008" summary="update">
+      <created>1578700948534</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1578700948534</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -154,40 +191,46 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update on agenda class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update on agenda class" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="WindowStateProjectService">
     <state x="725" y="229" width="460" height="592" key="#com.intellij.ide.util.MemberChooser" timestamp="1578529684975">
       <screen x="0" y="0" width="1920" height="1051" />
     </state>
     <state x="725" y="229" width="460" height="592" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1051@0.0.1920.1051" timestamp="1578529684975" />
-    <state x="607" y="123" width="695" height="805" key="CommitChangelistDialog2" timestamp="1578700942483">
+    <state x="607" y="123" width="695" height="805" key="CommitChangelistDialog2" timestamp="1578700948476">
       <screen x="0" y="0" width="1920" height="1051" />
     </state>
-    <state x="607" y="123" width="695" height="805" key="CommitChangelistDialog2/0.0.1920.1051@0.0.1920.1051" timestamp="1578700942483" />
-    <state width="1874" height="178" key="GridCell.Tab.0.bottom" timestamp="1578700747194">
+    <state x="607" y="123" width="695" height="805" key="CommitChangelistDialog2/0.0.1920.1051@0.0.1920.1051" timestamp="1578700948476" />
+    <state width="1874" height="178" key="GridCell.Tab.0.bottom" timestamp="1579037141114">
       <screen x="0" y="0" width="1920" height="1051" />
     </state>
-    <state width="1874" height="178" key="GridCell.Tab.0.bottom/0.0.1920.1051@0.0.1920.1051" timestamp="1578700747194" />
-    <state width="1874" height="178" key="GridCell.Tab.0.center" timestamp="1578700747194">
+    <state width="1874" height="178" key="GridCell.Tab.0.bottom/0.0.1920.1051@0.0.1920.1051" timestamp="1579037141114" />
+    <state width="1874" height="178" key="GridCell.Tab.0.center" timestamp="1579037141114">
       <screen x="0" y="0" width="1920" height="1051" />
     </state>
-    <state width="1874" height="178" key="GridCell.Tab.0.center/0.0.1920.1051@0.0.1920.1051" timestamp="1578700747194" />
-    <state width="1874" height="178" key="GridCell.Tab.0.left" timestamp="1578700747193">
+    <state width="1874" height="178" key="GridCell.Tab.0.center/0.0.1920.1051@0.0.1920.1051" timestamp="1579037141114" />
+    <state width="1874" height="178" key="GridCell.Tab.0.left" timestamp="1579037141113">
       <screen x="0" y="0" width="1920" height="1051" />
     </state>
-    <state width="1874" height="178" key="GridCell.Tab.0.left/0.0.1920.1051@0.0.1920.1051" timestamp="1578700747193" />
-    <state width="1874" height="178" key="GridCell.Tab.0.right" timestamp="1578700747194">
+    <state width="1874" height="178" key="GridCell.Tab.0.left/0.0.1920.1051@0.0.1920.1051" timestamp="1579037141113" />
+    <state width="1874" height="178" key="GridCell.Tab.0.right" timestamp="1579037141114">
       <screen x="0" y="0" width="1920" height="1051" />
     </state>
-    <state width="1874" height="178" key="GridCell.Tab.0.right/0.0.1920.1051@0.0.1920.1051" timestamp="1578700747194" />
-    <state x="555" y="261" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1578700818690">
+    <state width="1874" height="178" key="GridCell.Tab.0.right/0.0.1920.1051@0.0.1920.1051" timestamp="1579037141114" />
+    <state x="555" y="261" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1578700957674">
       <screen x="0" y="0" width="1920" height="1051" />
     </state>
-    <state x="555" y="261" width="800" height="528" key="Vcs.Push.Dialog.v2/0.0.1920.1051@0.0.1920.1051" timestamp="1578700818690" />
-    <state x="653" y="352" key="com.intellij.ide.util.TipDialog" timestamp="1578697692007">
+    <state x="555" y="261" width="800" height="528" key="Vcs.Push.Dialog.v2/0.0.1920.1051@0.0.1920.1051" timestamp="1578700957674" />
+    <state x="653" y="352" key="com.intellij.ide.util.TipDialog" timestamp="1579464635614">
       <screen x="0" y="0" width="1920" height="1051" />
     </state>
-    <state x="653" y="352" key="com.intellij.ide.util.TipDialog/0.0.1920.1051@0.0.1920.1051" timestamp="1578697692007" />
+    <state x="653" y="352" key="com.intellij.ide.util.TipDialog/0.0.1920.1051/1920.0.1360.768@0.0.1920.1051" timestamp="1579046657897" />
+    <state x="653" y="352" key="com.intellij.ide.util.TipDialog/0.0.1920.1051@0.0.1920.1051" timestamp="1579464635614" />
+    <state x="765" y="445" width="380" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578705730571">
+      <screen x="0" y="0" width="1920" height="1051" />
+    </state>
+    <state x="765" y="445" width="380" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1051@0.0.1920.1051" timestamp="1578705730571" />
   </component>
 </project>

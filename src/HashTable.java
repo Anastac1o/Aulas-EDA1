@@ -129,6 +129,18 @@ public abstract class HashTable<T> {
         }
         return true;
     }
+    /*public boolean contains(Elemento<T> x){
+        for (int i= 0; i < table.length; i++){
+            if(table[i] != null) {
+                if (!table[i].del){
+                    if(table[i].elem.equals(x)){
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }*/
 
     public void print() {
         for (int i = 0; i < table.length; i++) {
